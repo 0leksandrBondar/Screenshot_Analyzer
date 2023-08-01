@@ -1,0 +1,16 @@
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+ui_*.h
+*.autosave
+**/CMakeLists.txt.user
+*CMakeLists.txt.user*
+.vscode/
+/build
