@@ -118,8 +118,6 @@ DBManager::ImageData DBManager::imageData(const int id) const
     QSqlQuery query(_db);
     ImageData tmpImageData;
 
-    qDebug() << "Take Last image from id = " << id;
-
     query.prepare("SELECT id, image, hash_sum, similarity FROM images WHERE id = :id");
     query.bindValue(":id", id);
 
@@ -134,8 +132,6 @@ DBManager::ImageData DBManager::imageData(const int id) const
 
         tmpImageData.hashSum = query.value(2).toFloat();
         tmpImageData.similarity = query.value(3).toFloat();
-
-        qDebug("getLatestImageData()Reading latest image from database is successful");
     }
     else
     {
