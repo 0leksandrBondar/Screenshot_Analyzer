@@ -64,11 +64,9 @@ void AppController::compareAndSaveSimilarity(QImage currentScreenshot)
     const float similarityPercentage = _screenController->compareImages(std::move(
                                                                             currentScreenshot),
                                                                         std::move(prevImage));
-    qDebug() << "insert similarityPercentage to _dbManager->lastId() = " << _dbManager->lastId();
-    qDebug() << " similarityPercentage = " << similarityPercentage;
 
     _dbManager->insertSimilarityBetweenImages(similarityPercentage, _dbManager->lastId());
-    //_dbManager->insertHashSumInToDataBase(_screenController->hashSum(), _dbManager->lastId());
+    _dbManager->insertHashSumInToDataBase(_screenController->hashSum(), _dbManager->lastId());
 }
 
 void AppController::setupUi(QWidget *parent)

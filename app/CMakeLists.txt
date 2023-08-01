@@ -19,7 +19,7 @@ add_executable(${PROJECT_NAME} ${SOURCE} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
-   Qt6::Widgets
-   Qt6::Core
-   Qt6::Sql
+   Qt5::Widgets
+   Qt5::Core
+   Qt5::Sql
  )
