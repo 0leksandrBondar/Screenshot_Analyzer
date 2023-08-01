@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QPixmap>
+
+#include <memory>
 
 class AppController;
 
@@ -11,4 +14,6 @@ public:
     MainWindow(const int width, const int height);
     ~MainWindow();
 
+private:
+    std::unique_ptr<AppController> _appController;
 };
