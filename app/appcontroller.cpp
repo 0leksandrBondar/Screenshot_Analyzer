@@ -21,7 +21,7 @@ AppController::AppController(const int width, const int height, QWidget *parent)
     loadDataFromDb();
 
     connect(_timer.get(), &QTimer::timeout, this, &AppController::updateAndSaveScreenshot);
-    connect(_controlBar.get(), &ControlBar::onStartclicked, this, &AppController::startTimer);
+    connect(_controlBar.get(), &ControlBar::onStartClicked, this, &AppController::startTimer);
 }
 
 AppController::~AppController() {}

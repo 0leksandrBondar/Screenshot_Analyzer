@@ -16,9 +16,12 @@ public:
 
     void setupUi();
     void updateTime();
+
 signals:
-    void onStartclicked();
+    void onStartClicked();
 
 private:
+    bool _isRecording{ false };
+    void startCliked();
     std::unique_ptr<QPushButton> _controlButton;
 };
