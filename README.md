@@ -9,6 +9,6 @@ I understood why multithreading is needed and how to use it.
 
 # Appearence
 
-![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/79c38bd2-eb67-41e8-8852-9fcac07543fe)
+![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/875d8b88-a442-4e85-8365-3a033c1ae05d)
 
 ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/0b833f80-13d1-4b7d-b50d-136238798e38)
