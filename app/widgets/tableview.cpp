@@ -11,7 +11,6 @@ TableView::TableView(const int width, const int height, QWidget *parent)
     const int widgetHeight = qMin(height * 0.8, maximumHeight() * 0.8);
 
     resize(widgetWidth, widgetHeight);
-
     setupTableUi(widgetWidth, widgetHeight);
 
     QVBoxLayout *layout = new QVBoxLayout(this);

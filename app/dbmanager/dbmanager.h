@@ -11,7 +11,6 @@ public:
     struct ImageData
     {
         int currentId;
-        int previousId;
         int hashSum;
         QImage image;
         float similarity;

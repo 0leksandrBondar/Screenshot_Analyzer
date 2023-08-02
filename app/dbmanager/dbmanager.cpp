@@ -119,7 +119,7 @@ DBManager::ImageData DBManager::imageData(const int id) const
     ImageData tmpImageData;
 
     query.prepare("SELECT id, image, hash_sum, similarity FROM images WHERE id = :id");
-    query.bindValue(":id", id);
+    query.bindValue(QStringLiteral(":id"), id);
 
     if (query.exec() && query.next())
     {
@@ -145,7 +145,7 @@ std::vector<DBManager::ImageData> DBManager::loadData() const
 {
     std::vector<ImageData> data;
 
-    QSqlQuery query("SELECT id, image, hash_sum, similarity FROM images", _db);
+    QSqlQuery query(QStringLiteral("SELECT id, image, hash_sum, similarity FROM images"), _db);
 
     while (query.next())
     {
@@ -168,7 +168,7 @@ std::vector<DBManager::ImageData> DBManager::loadData() const
 
 int DBManager::lastId() const
 {
-    QSqlQuery maxIdQuery("SELECT MAX(id) FROM images", _db);
+    QSqlQuery maxIdQuery(QStringLiteral("SELECT MAX(id) FROM images"), _db);
 
     if (maxIdQuery.exec() && maxIdQuery.next())
     {

@@ -5,6 +5,7 @@
 
 #include <thread>
 
+#include <QBuffer>
 #include <QTimer>
 #include <QVBoxLayout>
 
@@ -36,6 +37,10 @@ void AppController::addLatestImageToTable(const int id)
     _tableView->initRow(imageData.image, imageData.hashSum, imageData.similarity);
 }
 
+/*!
+ * \brief AppController::updateAndSaveScreenshot creates a new screenshot
+ * and writes this screenshot to the database, calculates the similarity to the previous screenshot
+ */
 void AppController::updateAndSaveScreenshot()
 {
     const QPixmap currentScreenshot = _screenController->makeScreenshot();
@@ -52,7 +57,6 @@ void AppController::updateAndSaveScreenshot()
 
 void AppController::updateDatabase(QPixmap currentScreenshot)
 {
-    qDebug("");
     _dbManager->insertImageInToDataBase(currentScreenshot);
 }
 
