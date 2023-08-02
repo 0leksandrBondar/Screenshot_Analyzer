@@ -1,4 +1,4 @@
-#include "screenshotcontroller.h"
+#include "screencontroller.h"
 #include "qscreen.h"
 
 #include <QDir>

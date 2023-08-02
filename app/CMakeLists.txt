@@ -3,7 +3,7 @@ set(SOURCE
     widgets/tableview.cpp
     widgets/controlbar.cpp
     appcontroller.cpp
-    screenshotcontroller.cpp
+    screencontroller.cpp
     mainwindow.cpp
     main.cpp)
 
@@ -12,7 +12,7 @@ set(HEADERS
     widgets/tableview.h
     widgets/controlbar.h
     appcontroller.h
-    screenshotcontroller.h
+    screencontroller.h
     mainwindow.h)
 
 add_executable(${PROJECT_NAME} ${SOURCE} ${HEADERS})

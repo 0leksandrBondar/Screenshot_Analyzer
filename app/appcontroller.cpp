@@ -1,5 +1,5 @@
 #include "appcontroller.h"
-#include "ScreenshotController.h"
+#include "screencontroller.h"
 #include "widgets/controlbar.h"
 #include "widgets/tableview.h"
 
