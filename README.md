@@ -18,6 +18,11 @@ I understood why multithreading is needed and how to use it.
     - Qt5::Widgets
     - Qt5::Core
     - Qt5::Sql
+    - 
+  - ## Compilers
+    - Windows: MSVC 2019
+    - Linux: GCC
+    - MacOs: clang 
 
 
 # System statuses
