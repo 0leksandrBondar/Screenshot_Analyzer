@@ -29,12 +29,9 @@ I understood why multithreading is needed and how to use it.
   - Windows:
     - Everything is ok.
   - Linux
-    - App on linux makes invalid screenshots
+    - Everything is ok.
   - MacOs
     - Everything is ok.
-
-# Critical Bugs
-  - app on linux makes invalid screenshots
   
 # Non-critical Bugs
   - ## Strange log when app is closed
@@ -49,7 +46,8 @@ I understood why multithreading is needed and how to use it.
   - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/65695357-b52e-4040-babd-fb11956dddac)
  
  - ## Linux
-  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/3b4484f0-269d-4623-9c75-a4aa57667875)
+  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/64577778-886a-4649-8d4e-21af8bf678ef)
+
 
 
  
