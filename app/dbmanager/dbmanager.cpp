@@ -20,7 +20,7 @@ DBManager::DBManager() : _db{ QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"
     else
     {
         query.exec(QStringLiteral(
-            "CREATE TABLE IF NOT EXISTS images (id INTEGER PRIMARY KEY, image, hash_sum INT"
+            "CREATE TABLE IF NOT EXISTS images (id INTEGER PRIMARY KEY, image, hash_sum BLOB"
             "BLOB, similarity REAL)"));
     }
 }
@@ -66,7 +66,7 @@ void DBManager::insertImageInToDataBase(QPixmap pixmap)
 
     if (query.exec())
     {
-        qDebug() << "Insertion in " << nextId << " image is successful";
+        qDebug() << "Insertion in image is successful";
     }
     else
     {
@@ -75,7 +75,7 @@ void DBManager::insertImageInToDataBase(QPixmap pixmap)
     }
 }
 
-void DBManager::insertHashSumInToDataBase(const int hashSum, const int id)
+void DBManager::insertHashSumInToDataBase(const QByteArray &hashSum, const int id)
 {
     QSqlQuery query(_db);
 
@@ -130,7 +130,7 @@ DBManager::ImageData DBManager::imageData(const int id) const
         pixmap.loadFromData(byteArray);
         tmpImageData.image = pixmap.toImage();
 
-        tmpImageData.hashSum = query.value(2).toFloat();
+        tmpImageData.hashSum = query.value(2).toByteArray();
         tmpImageData.similarity = query.value(3).toFloat();
     }
     else
@@ -157,7 +157,7 @@ std::vector<DBManager::ImageData> DBManager::loadData() const
 
         imageData.currentId = query.value(0).toInt();
         imageData.image = pixmap.toImage();
-        imageData.hashSum = query.value(2).toFloat();
+        imageData.hashSum = query.value(2).toByteArray();
         imageData.similarity = query.value(3).toFloat();
 
         data.push_back(imageData);

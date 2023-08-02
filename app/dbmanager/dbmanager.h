@@ -11,7 +11,7 @@ public:
     struct ImageData
     {
         int currentId;
-        int hashSum;
+        QByteArray hashSum;
         QImage image;
         float similarity;
     };
@@ -25,7 +25,7 @@ public:
     std::vector<ImageData> loadData() const;
 
     void insertImageInToDataBase(QPixmap pixmap);
-    void insertHashSumInToDataBase(const int hashSum, const int id);
+    void insertHashSumInToDataBase(const QByteArray &hashSum, const int id);
     void insertSimilarityBetweenImages(const float similarity, const int id) const;
 
 private:

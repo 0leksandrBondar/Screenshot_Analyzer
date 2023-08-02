@@ -1,7 +1,7 @@
 #pragma once
 
-#include <QWidget>
 #include <QTableWidget>
+#include <QWidget>
 
 #include <memory>
 
@@ -11,7 +11,7 @@ class TableView : public QWidget
 public:
     TableView(const int width, const int height, QWidget *parent = nullptr);
 
-    void initRow(const QImage &image, const int hashSum, const float similarity);
+    void initRow(const QImage &image, const QByteArray &hashSum, const float similarity);
 
 private:
     void setupTableUi(const int width, const int height);

@@ -27,8 +27,9 @@ public slots:
     void updateAndSaveScreenshot();
 
 private:
-    void updateDatabase(QPixmap currentScreenshot);
+    void insertLastScreenToDb(const QPixmap &currentScreenshot);
     void compareAndSaveSimilarity(QImage currentScreenshot);
+    void calcAndWriteHashSum(const QPixmap &currentScreenshot);
 
 private:
     void setupUi(QWidget *parent);

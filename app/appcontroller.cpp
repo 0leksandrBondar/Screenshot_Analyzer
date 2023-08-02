@@ -57,17 +57,19 @@ void AppController::updateAndSaveScreenshot()
 {
     const QPixmap currentScreenshot = _screenController->makeScreenshot();
 
-    updateDatabase(currentScreenshot);
+    insertLastScreenToDb(currentScreenshot);
+
     std::thread compareThread([=]() {
         const QImage currentScreen = currentScreenshot.toImage();
         compareAndSaveSimilarity(currentScreen);
+        calcAndWriteHashSum(currentScreenshot);
         addLatestImageToTable(_dbManager->lastId());
     });
 
     compareThread.detach();
 }
 
-void AppController::updateDatabase(QPixmap currentScreenshot)
+void AppController::insertLastScreenToDb(const QPixmap &currentScreenshot)
 {
     _dbManager->insertImageInToDataBase(currentScreenshot);
 }
@@ -82,6 +84,11 @@ void AppController::compareAndSaveSimilarity(QImage currentScreenshot)
                                                                         std::move(prevImage));
 
     _dbManager->insertSimilarityBetweenImages(similarityPercentage, _dbManager->lastId());
+}
+
+void AppController::calcAndWriteHashSum(const QPixmap &currentScreenshot)
+{
+    _screenController->initHashSum(currentScreenshot);
     _dbManager->insertHashSumInToDataBase(_screenController->hashSum(), _dbManager->lastId());
 }
 

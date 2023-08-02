@@ -1,6 +1,7 @@
 #include "screencontroller.h"
 #include "qscreen.h"
 
+#include <QBuffer>
 #include <QDir>
 #include <QGuiApplication>
 
@@ -35,7 +36,6 @@ float ScreenshotController::compareImages(QImage image1, QImage image2)
     const int width = image1.width();
     const int height = image1.height();
     const double totalPixels = width * height;
-    _hashSum = totalPixels;
 
     double differentPixels = 0;
 
@@ -57,4 +57,23 @@ float ScreenshotController::compareImages(QImage image1, QImage image2)
     return qRound(similarityPercentage * 100) / 100;
 }
 
-int ScreenshotController::hashSum() const { return _hashSum; }
+QByteArray ScreenshotController::makeHashSum(const QPixmap &currnetScreen,
+                                             QCryptographicHash::Algorithm hashAlgorithm)
+{
+    QByteArray byteArray;
+    QBuffer buffer(&byteArray);
+
+    buffer.open(QIODevice::WriteOnly);
+    currnetScreen.save(&buffer, "PNG");
+
+    QCryptographicHash hash(hashAlgorithm);
+    hash.addData(byteArray);
+    return hash.result();
+}
+
+void ScreenshotController::initHashSum(const QPixmap &currnetScreen)
+{
+    _hashSum = makeHashSum(currnetScreen, QCryptographicHash::Algorithm::Md5);
+}
+
+QByteArray ScreenshotController::hashSum() const { return _hashSum; }

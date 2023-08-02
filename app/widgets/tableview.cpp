@@ -18,13 +18,14 @@ TableView::TableView(const int width, const int height, QWidget *parent)
     setLayout(layout);
 }
 
-void TableView::initRow(const QImage &image, const int hashSum, const float similarity)
+void TableView::initRow(const QImage &image, const QByteArray &hashSum, const float similarity)
 {
     const int rowCount = _tableWidget->rowCount();
     const auto imageItem = new QTableWidgetItem();
 
-    const auto similarityItem = new QTableWidgetItem(QString::number(similarity) + QStringLiteral(" %"));
-    const auto hashItem = new QTableWidgetItem(QString::number(hashSum));
+    const auto similarityItem = new QTableWidgetItem(QString::number(similarity)
+                                                     + QStringLiteral(" %"));
+    const auto hashItem = new QTableWidgetItem(QString(hashSum.toHex(':')));
     similarityItem->setTextAlignment(Qt::AlignCenter);
     hashItem->setTextAlignment(Qt::AlignCenter);
 
