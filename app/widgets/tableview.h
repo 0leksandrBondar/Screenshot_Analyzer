@@ -1,10 +1,9 @@
 #pragma once
 
 #include <QWidget>
+#include <QTableWidget>
 
 #include <memory>
-
-class QTableWidget;
 
 class TableView : public QWidget
 {

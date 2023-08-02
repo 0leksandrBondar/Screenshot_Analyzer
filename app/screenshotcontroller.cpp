@@ -54,7 +54,7 @@ float ScreenshotController::compareImages(QImage image1, QImage image2)
     const double differencePercentage = (differentPixels / totalPixels) * 100.0;
 
     const double similarityPercentage = 100.0 - differencePercentage;
-    return std::round(similarityPercentage * 100) / 100;
+    return qRound(similarityPercentage * 100) / 100;
 }
 
 int ScreenshotController::hashSum() const { return _hashSum; }
