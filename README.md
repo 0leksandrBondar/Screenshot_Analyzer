@@ -40,13 +40,14 @@ I understood why multithreading is needed and how to use it.
 
 # Appearence
 - ## Windows
-  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/875d8b88-a442-4e85-8365-3a033c1ae05d)
+  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/5607796c-dec2-4db0-8f87-6fc1224caa75)
 
 - ## MacOs
   - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/65695357-b52e-4040-babd-fb11956dddac)
  
  - ## Linux
-  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/64577778-886a-4649-8d4e-21af8bf678ef)
+  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/096e89b3-cc94-4426-a04d-fc134d5592d9)
+
 
 
 
