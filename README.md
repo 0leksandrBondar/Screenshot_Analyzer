@@ -43,3 +43,7 @@ I understood why multithreading is needed and how to use it.
 - ## MacOs
   - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/65695357-b52e-4040-babd-fb11956dddac)
  
+ - ## Linux
+  - ![image](https://github.com/0leksandrBondar/Screenshot_Analizer/assets/104301715/55800cba-967a-46e8-8515-548901f2fbb6)
+
+ 
