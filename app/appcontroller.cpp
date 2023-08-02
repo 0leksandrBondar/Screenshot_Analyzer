@@ -26,7 +26,19 @@ AppController::AppController(const int width, const int height, QWidget *parent)
 
 AppController::~AppController() {}
 
-void AppController::startTimer() { _timer->start(_timeToScreen / 25); }
+void AppController::startTimer()
+{
+    if (_isTimerRunning)
+    {
+        _timer->stop();
+        _isTimerRunning = false;
+    }
+    else
+    {
+        _timer->start(_timeToScreen);
+        _isTimerRunning = true;
+    }
+}
 
 /*!
  * \brief AppController::addLatestImageToTable updates the user table after updating the database

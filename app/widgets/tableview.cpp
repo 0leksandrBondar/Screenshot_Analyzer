@@ -23,7 +23,7 @@ void TableView::initRow(const QImage &image, const int hashSum, const float simi
     const int rowCount = _tableWidget->rowCount();
     const auto imageItem = new QTableWidgetItem();
 
-    const auto similarityItem = new QTableWidgetItem(QString::number(similarity));
+    const auto similarityItem = new QTableWidgetItem(QString::number(similarity) + QStringLiteral(" %"));
     const auto hashItem = new QTableWidgetItem(QString::number(hashSum));
     similarityItem->setTextAlignment(Qt::AlignCenter);
     hashItem->setTextAlignment(Qt::AlignCenter);

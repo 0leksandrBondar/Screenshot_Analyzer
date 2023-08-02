@@ -33,6 +33,7 @@ private:
 private:
     void setupUi(QWidget *parent);
 
+    bool _isTimerRunning{ false };
     const int _timeToScreen{ 60000 };
     std::unique_ptr<QTimer> _timer;
     std::unique_ptr<DBManager> _dbManager;
