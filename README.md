@@ -1,4 +1,4 @@
-# Screenshot_Analizer
+# Screenshot_Analyzer
 
 # About project
 
